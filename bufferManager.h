@@ -18,10 +18,14 @@ public:
 
     void LoadPage(int page_id) {
         std::cout << "Loading page " << page_id << std::endl;
-
+        
         // 使用 replacer_ 检查和管理页面
         replacer_->AccessPage(page_id);
         std::cout << "Page " << page_id << " loaded into cache." << std::endl;
+    }
+
+    void printStatistics() const {
+        replacer_->Print();
     }
 
 private:

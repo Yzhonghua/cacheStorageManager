@@ -40,6 +40,9 @@ int main(int argc, char* argv[]) {
     bufferManager.LoadPage(3);
     bufferManager.LoadPage(1);  // This should hit in cache
     bufferManager.LoadPage(4);  // This should cause an eviction if cache size is 3
+    bufferManager.LoadPage(4);
+
+    bufferManager.printStatistics();
 
     return 0;
 }
